@@ -1,0 +1,19 @@
+{
+  "name": "hungrysquad",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:client": "yarn --cwd client start",
+    "dev:server": "yarn --cwd server start",
+    "dev": "concurrently -k -p \"[{name}]\" -c \"yellow.bold,cyan.bold\" -n \"client,server\" \"yarn dev:client\" \"yarn dev:server\""
+  },
+  "author": "Maksym Azarov",
+  "license": "ISC",
+  "engines": {
+    "node": "16.15.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  }
+}
