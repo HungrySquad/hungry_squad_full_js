@@ -15,6 +15,6 @@ jobs:
       with:
         node-version: 16.15.1
     - name: Install modules
-      run: yarn
+      run: yarn install && yarn install yarn install --cwd server/ && yarn install yarn install --cwd client/
     - name: Run ESLint
       run: yarn run eslint .
