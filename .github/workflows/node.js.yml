@@ -1,24 +1,33 @@
-name: Node.js CI Eslint
+name: EsLint
 
 on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
   push:
-    branches: [ "master" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - main
 
 jobs:
-  build:
+  run-linters:
+    name: Run linters
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 16.15.1
-    - name: Install modules overall
-      run: yarn install
-    - name: Install server modules
-      run: yarn install --cwd server/ 
-    - name: Install client modules
-      run: yarn install --cwd client/
-    - name: Run ESLint
-      run: yarn run eslint .
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.15.1
+
+      - name: Install Node.js dependencies
+        run: yarn install
+
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
