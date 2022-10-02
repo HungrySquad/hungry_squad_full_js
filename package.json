@@ -15,5 +15,8 @@
   },
   "devDependencies": {
     "concurrently": "^7.4.0"
+  },
+  "dependencies": {
+    "eslint": "^8.24.0"
   }
 }
