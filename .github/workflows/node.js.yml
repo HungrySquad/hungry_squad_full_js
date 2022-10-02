@@ -13,6 +13,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install nvm
       run: curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+    - name: Reset source
+      run: source ~/.nvm/nvm.sh
     - name: Install node 16.15.1
       run: nvm install 16.15.1
     - name: Install modules
