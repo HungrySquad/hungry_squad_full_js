@@ -7,7 +7,7 @@ yarn install
 #### Command to start:
 yarn dev
 
-####Install yarn (Also, If you get `00h00m00s 0/0: : ERROR: [Errno 2] No such file or directory: 'install'`):
+#### Install yarn (Also, If you get `00h00m00s 0/0: : ERROR: [Errno 2] No such file or directory: 'install'`):
 ~~~bash
 sudo apt remove cmdtest
 sudo apt remove yarn
