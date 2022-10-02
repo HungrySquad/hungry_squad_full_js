@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - name: Install node 16.15.1
+      run: nvm install 16.15.1
     - name: Install modules
       run: yarn
     - name: Run ESLint
