@@ -35,5 +35,4 @@ jobs:
 
       - name: Run linters full
         uses: wearerequired/lint-action@v2
-        with:
-          eslint: true
+        run: yarn eslint --ext ts,tsx .
