@@ -34,5 +34,4 @@ jobs:
         run: yarn --cwd server install
 
       - name: Run linters full
-        uses: wearerequired/lint-action@v2
         run: yarn eslint --ext ts,tsx .
