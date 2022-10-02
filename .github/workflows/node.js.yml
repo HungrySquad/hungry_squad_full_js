@@ -14,7 +14,11 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 16.15.1
-    - name: Install modules
-      run: yarn install && yarn install yarn install --cwd server/ && yarn install yarn install --cwd client/
+    - name: Install modules overall
+      run: yarn install
+    - name: Install server modules
+      run: yarn install yarn install --cwd server/ 
+    - name: Install client modules
+      run: yarn install yarn install --cwd client/
     - name: Run ESLint
       run: yarn run eslint .
