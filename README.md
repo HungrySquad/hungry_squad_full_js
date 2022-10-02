@@ -4,8 +4,7 @@ Frontend and API for Users
 
 
 ### Installation
-#### Install Brew
-https://brew.sh/
+
 #### Install Node Js
 nvm install 16.15.1
 #### Install Dependecies:
