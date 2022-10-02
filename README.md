@@ -1,8 +1,21 @@
 ## hungry_squad_full_js 
 Frontend and API for Users
 
-#### Command to install deps:
+
+
+### Installation
+#### Install Brew
+https://brew.sh/
+#### Install Node Js
+nvm install 16.15.1
+#### Install Dependecies:
 yarn install
+
+**For Server:** yarn install 
+yarn install --cwd server/
+
+**For Client**
+yarn install --cwd client/
 
 #### Command to start:
 yarn dev
