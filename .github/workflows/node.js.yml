@@ -27,7 +27,13 @@ jobs:
       - name: Install Node.js dependencies
         run: yarn install
 
-      - name: Run linters
+      - name: Install Node.js dependencies client
+        run: yarn --cwd client install
+
+      - name: Install Node.js dependencies server
+        run: yarn --cwd server install
+
+      - name: Run linters full
         uses: wearerequired/lint-action@v2
         with:
           eslint: true
