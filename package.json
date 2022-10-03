@@ -8,7 +8,7 @@
     "dev:server": "yarn --cwd server start",
     "dev": "concurrently -k -p \"[{name}]\" -c \"yellow.bold,cyan.bold\" -n \"client,server\" \"yarn dev:client\" \"yarn dev:server\""
   },
-  "author": "Maksym Azarov",
+  "author": "Maksym Azarov <volodor05412@gmail.com>",
   "license": "ISC",
   "engines": {
     "node": "16.15.1"
@@ -22,9 +22,7 @@
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.8",
-    "typescript": "*"
-  },
-  "dependencies": {
+    "typescript": "^4.8.4",
     "eslint": "^8.24.0"
   }
 }
