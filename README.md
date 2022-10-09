@@ -13,10 +13,10 @@ nvm install 16.15.1
 yarn install
 
 **For Server:** yarn install
-yarn install --cwd server/
+yarn install --cwd server
 
 **For Client**
-yarn install --cwd client/
+yarn install --cwd client
 
 #### Command to start:
 
