@@ -12,7 +12,7 @@ nvm install 16.15.1
 
 yarn install
 
-**For Server:** yarn install
+**For Server:** 
 yarn install --cwd server
 
 **For Client**
