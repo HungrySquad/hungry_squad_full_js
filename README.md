@@ -12,7 +12,7 @@ nvm install 16.15.1
 
 yarn install
 
-**For Server:** 
+**For Server:**
 yarn install --cwd server
 
 **For Client**
@@ -32,3 +32,9 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update
 sudo apt-get install yarn -y
 ```
+
+Docker:
+docker image build . -t hungrysquad
+docker container run -p 5000:5000 -e PORT=5000 -e DB_USERNAME=hungry_squad -e DB_PASSWORD=adminPassword123 -e NODE_ENV=production hungrysquad -- use this command to run
+docker container run -p 5000:5000 --env-file ./env.production hungrysquad
+docker exec -it container_id bash
