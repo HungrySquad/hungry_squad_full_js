@@ -24,9 +24,6 @@ jobs:
         with:
           node-version: 16.15.1
 
-      - name: Install Node.js dependencies
-        run: yarn install
-
       - name: Install Node.js dependencies client
         run: yarn --cwd client install
 
