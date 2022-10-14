@@ -7,7 +7,7 @@
     "dev:client": "yarn --cwd client start",
     "dev:server": "yarn --cwd server start",
     "dev": "concurrently -k -p \"[{name}]\" -c \"yellow.bold,cyan.bold\" -n \"client,server\" \"yarn dev:client\" \"yarn dev:server\"",
-    "install": "concurrently \"cd ./server && yarn\" \"cd ./client && yarn\""
+    "lint": "eslint --ext ts,tsx ."
   },
   "author": "Maksym Azarov <volodor05412@gmail.com>",
   "license": "ISC",
