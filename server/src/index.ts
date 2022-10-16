@@ -1,9 +1,10 @@
 import express, { Express, json, urlencoded } from "express";
+import morgan from "morgan";
 import dotenv from "dotenv";
 import cors from "cors";
 import log from "./logger";
 import connect from "./db";
-import routes from "./routes";
+import routers from "./routers";
 import errorHandler from "./helpers/errorHandler";
 
 dotenv.config();
@@ -14,9 +15,13 @@ const PORT: number = parseInt(process.env.PORT as string) || 5000;
 
 app.use(cors());
 app.use(json());
+app.use(morgan("tiny"));
 app.use(urlencoded({ extended: true }));
 
-app.use("/users", routes.userRouter);
+const {authRouter, usersRouter} = routers
+
+app.use("/api/auth", authRouter);
+app.use("/api/users/me", usersRouter);
 
 app.use(errorHandler);
 
