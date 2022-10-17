@@ -1,0 +1,37 @@
+name: EsLint
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the main branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.15.1
+
+      - name: Install Node.js dependencies
+        run: yarn install
+
+      - name: Install Node.js dependencies client
+        run: yarn --cwd client install
+
+      - name: Install Node.js dependencies server
+        run: yarn --cwd server install
+
+      - name: Run linters full
+        run: yarn eslint --ext ts,tsx .

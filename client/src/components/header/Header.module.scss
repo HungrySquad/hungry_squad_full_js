@@ -1,0 +1,36 @@
+.headerWrapper {
+  max-width: 1060px;
+  padding: 0 15px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLinks {
+  display: flex;
+
+  li {
+    text-transform: uppercase;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.13rem;
+    font-weight: 600;
+    padding: 20px 0;
+    text-transform: uppercase;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: inline-block;
+    word-wrap: none;
+  }
+
+  li:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+  }
+
+  li + li {
+    text-transform: uppercase;
+    margin-left: 30px;
+  }
+}
