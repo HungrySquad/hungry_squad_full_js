@@ -32,7 +32,7 @@ export const updateUserInfo = async (req:Request, res:Response) => {
     return res.status(400).json({ message: "User does not exist" });
   }
   const { oldPassword, newPassword } = req.body;
-  if (await compare(String(oldPassword), String(oldUserInfo.password))) {
+  if (await compare(oldPassword, oldUserInfo.password)) {
     const newUserInfo = await updateUserPassword(newPassword, oldUserInfo);
     if (!newUserInfo) {
       throw new Error();

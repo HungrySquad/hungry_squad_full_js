@@ -1,7 +1,12 @@
 import { Router } from "express";
-import { registerUser, loginUser, forgotPasswordUser } from "../controllers/auth.controller";
+import {
+  registerUser,
+  loginUser,
+  forgotPasswordUser
+} from "../controllers/auth.controller";
 
-const asyncWrapper = (controller: any) => (req:any, res:any, next:any) => controller(req, res, next).catch(next);
+const asyncWrapper = (controller: any) => (req: any, res: any, next: any) =>
+  controller(req, res, next).catch(next);
 
 const router = Router();
 

@@ -34,7 +34,7 @@ export const loginUser = async (req: Request, res: Response) => {
     const jwtToken = signJWT(user._id, user.email, user.gender);
     return res.json({ jwt_token: jwtToken });
   }
-  return res.status(403).json({ message: "Wrong password" });
+  return res.status(403).json({ message: "Invalid email or password" });
 };
 
 export const forgotPasswordUser = async (req: Request, res: Response) => {

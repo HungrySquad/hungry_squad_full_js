@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import log from "./logger";
 import connect from "./db";
-import routers from "./routers";
+import { authRouter, usersRouter } from "./routers";
 import errorHandler from "./helpers/errorHandler";
 
 dotenv.config();
@@ -17,8 +17,6 @@ app.use(cors());
 app.use(json());
 app.use(morgan("tiny"));
 app.use(urlencoded({ extended: true }));
-
-const {authRouter, usersRouter} = routers
 
 app.use("/api/auth", authRouter);
 app.use("/api/users/me", usersRouter);

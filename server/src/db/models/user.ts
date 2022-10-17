@@ -15,22 +15,22 @@ export const userJoiSchema = Joi.object({
 
   password: Joi.string()
     .pattern(/^[a-zA-Z0-9]{3,30}$/)
-    .required(),
+    .required()
 });
 
 const userSchema = new mongoose.Schema<IUser>({
   email: {
     type: String,
     required: true,
-    unique: true,
+    unique: true
   },
   password: {
     type: String,
-    required: true,
+    required: true
   },
   gender: {
     type: String,
-    required: true,
+    required: true
   }
 });
 
