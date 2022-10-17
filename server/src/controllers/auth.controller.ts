@@ -3,18 +3,29 @@ import { compare } from "bcryptjs";
 import { userJoiSchema } from "../db/models/index";
 
 import {
-  saveUser, findUser, signJWT, generateUserPassword, sendNewPasswordToEmail,
+  saveUser,
+  findUser,
+  signJWT,
+  generateUserPassword,
+  sendNewPasswordToEmail
 } from "../services/authService";
 
 export const registerUser = async (req: Request, res: Response) => {
   const { email, password, gender } = req.body;
   await userJoiSchema.validateAsync({
-    email, password
+    email,
+    password
   });
 
   const genders = ["male", "female", "other", "not-say"];
   if (genders.indexOf(gender) === -1) {
-    return res.status(400).json({ message: `Please specify 'gender' parameter. It can be '${genders.join(", ")}'` });
+    return res
+      .status(400)
+      .json({
+        message: `Please specify 'gender' parameter. It can be '${genders.join(
+          ", "
+        )}'`
+      });
   }
 
   const savedUser = await saveUser(email, password, gender);
