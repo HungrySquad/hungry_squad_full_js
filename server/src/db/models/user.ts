@@ -1,24 +1,37 @@
-import { Schema, model, Document, Types } from "mongoose";
+import Joi from "joi";
+import mongoose from "mongoose";
 
 export interface IUser extends Document {
-  _id: Types.ObjectId;
-  name: string;
+  _id: mongoose.Types.ObjectId;
   email: string;
-  avatar?: string;
+  password: string;
+  gender: string;
 }
 
-const userSchema = new Schema<IUser>({
-  name: {
-    type: String,
-    required: true
-  },
-  email: {
-    type: String,
-    required: true
-  },
-  avatar: String
+export const userJoiSchema = Joi.object({
+  email: Joi.string()
+    .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })
+    .required(),
+
+  password: Joi.string()
+    .pattern(/^[a-zA-Z0-9]{3,30}$/)
+    .required()
 });
 
-const User = model<IUser>("User", userSchema);
+const userSchema = new mongoose.Schema<IUser>({
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  gender: {
+    type: String,
+    required: true
+  }
+});
 
-export default User;
+export const User = mongoose.model<IUser>("User", userSchema);
