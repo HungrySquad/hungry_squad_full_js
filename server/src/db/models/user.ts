@@ -8,6 +8,7 @@ export interface IUser extends Document {
   gender: string;
 }
 
+// TODO: it throws 500 status code, rewrite to bad request status code
 export const userJoiSchema = Joi.object({
   email: Joi.string()
     .email({ minDomainSegments: 2, tlds: { allow: ["com", "net"] } })

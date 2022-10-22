@@ -1,13 +1,14 @@
 import { hash } from "bcryptjs";
-
 import { sign } from "jsonwebtoken";
 import { createTransport } from "nodemailer";
+import { Types } from "mongoose";
 import dotenv from "dotenv";
 import crypto from "node:crypto";
+
 import { User } from "../db/models";
 
 dotenv.config();
-const secretKey: string = process.env.SECRET_KEY as string;
+const secretKey: string = (process.env.SECRET_KEY as string) || "secretKey";
 
 export const saveUser = async (
   email: string,
@@ -30,7 +31,7 @@ export const findUser = async (email: string) => {
   return user;
 };
 
-export const signJWT = (id: any, email: string, gender: string) => {
+export const signJWT = (id: Types.ObjectId, email: string, gender: string) => {
   const payload = { userId: id, email, gender };
   const jwtToken = sign(payload, secretKey);
   return jwtToken;
