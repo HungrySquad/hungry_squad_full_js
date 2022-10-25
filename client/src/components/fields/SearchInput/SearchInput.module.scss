@@ -1,0 +1,25 @@
+.ingredientsInput {
+  padding: 15px;
+  border: 1px solid #b8c2d1;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.inputIconText {
+  background-color: transparent;
+  margin-left: 12px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.inputIconText::placeholder {
+  color: #b8c2d1;
+}
+
+.filters,
+.inputIconLabel {
+  font-size: 1.5rem;
+  color: #b8c2d1;
+}

@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 import CommonButton from "../../components/buttons/CommonButton";
 import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
+import MainHeader from "../../components/headers/MainHeader/MainHeader";
 import s from "./Main.module.scss";
 import MainImg1 from "./../../assets/images/main/main-img-1.jpg";
 import MainImg2 from "./../../assets/images/main/main-img-2.jpg";
@@ -15,7 +15,7 @@ export default function Main() {
   return (
     <>
       <div className={s.main}>
-        <Header />
+        <MainHeader />
 
         <div className={s.marketing}>
           <div className={s.marketingWrapper}>

@@ -1,0 +1,22 @@
+.tabList {
+  padding-left: 0;
+}
+
+.tabItem {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+  color: #000000;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+}
+
+.tabActive {
+  background-color: white;
+  border: solid #000000;
+  border-width: 0px 0px 3px 0px;
+}

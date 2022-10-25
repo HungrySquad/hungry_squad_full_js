@@ -1,0 +1,121 @@
+.ingredientCard {
+  margin-top: 10px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+}
+
+.ingredientCardHeaderContent {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #d9d9d9;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
+}
+
+.ingredientCardType {
+  display: flex;
+
+  & > h3 {
+    font-size: 1rem;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.ingredientCardButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  font-size: 1.3rem;
+
+  & > span {
+    color: #000000;
+  }
+}
+
+//
+.ingredientCardContent {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.ingredientCardIngredient {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+
+  &:hover {
+    background: rgba(146, 158, 175, 0.05);
+  }
+
+  & > span {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+  }
+}
+
+.ingredientCardDots {
+  flex: 1 0;
+  border-bottom: 2px dotted #a7a7a7;
+  height: 1rem;
+  margin-top: -2px;
+}
+
+//
+
+.ingredientAmount {
+  margin-top: 2px;
+  font-size: 0.88rem;
+  color: #8d99ac;
+  padding: 0;
+  border: none;
+
+  &:hover {
+    border-bottom: 0.5px solid #8d99ac;
+  }
+  &:focus {
+    border-bottom: 0.5px solid #000000;
+    color: #000;
+  }
+}
+
+.ingredientSelection {
+  appearance: none;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  transition: all 0.15s ease-out 0s;
+  border: 2px solid #8d99ac;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+  border-radius: 2px;
+}

@@ -7,6 +7,7 @@ import ROUTES from "./constants/routes";
 import Login from "./pages/Login/Login";
 import Main from "./pages/Main/Main";
 import Signup from "./pages/Signup/Signup";
+import Recipes from "./pages/Recipes/Recipes";
 import PrivateRoute from "./components/PrivateRoute";
 import GuestRoute from "./components/GuestRoute";
 import { AppDispatch } from "./store";
@@ -33,6 +34,12 @@ function App() {
         <Route
           path={ROUTES.signup}
           element={<GuestRoute component={Signup} path={ROUTES.signup} />}
+        />
+
+        <Route
+          path={ROUTES.recipes}
+          // element={<PrivateRoute component={Recipes} />}
+          element={<Recipes />}
         />
       </Routes>
     </BrowserRouter>

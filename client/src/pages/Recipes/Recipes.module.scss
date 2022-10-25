@@ -1,0 +1,81 @@
+.wrapper {
+  padding: 30px;
+}
+
+.navigation {
+  display: flex;
+  border-bottom: 1px solid #b8c2d1;
+}
+
+.creditsIcon {
+  font-size: 1.5rem;
+}
+
+.creditsIconRegular {
+  color: #b8c2d1;
+}
+
+.creditsIconClicked {
+  color: #585268;
+}
+
+.tabs {
+  margin: 0 auto;
+}
+
+// main content
+
+.mainContent {
+  display: flex;
+  margin-top: 20px;
+}
+
+.mainContentLeft {
+  flex-basis: 20%;
+  background: linear-gradient(
+      270deg,
+      rgba(255, 248, 251, 0.5) 6.02%,
+      rgba(255, 247, 250, 0.5) 45.61%,
+      rgba(240, 237, 248, 0.5) 95.91%
+    ),
+    #f0edf8;
+  border-radius: 8px 8px 0px 0px;
+  padding: 10px;
+  overflow-y: scroll;
+  height: calc(100vh - 250px);
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(141, 153, 172, 0.34);
+  }
+}
+
+.mainContentRight {
+  margin-left: 10px;
+  flex-basis: 80%;
+}
+
+.recipePanels {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  justify-content: space-between;
+  height: calc(100vh - 250px);
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(141, 153, 172, 0.34);
+  }
+}

@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import ROUTES from "../../constants/routes";
-import logo from "./../../assets/images/header/Logo.png";
-import s from "./Header.module.scss";
+import ROUTES from "../../../constants/routes";
+import logo from "./../../../assets/images/header/Logo.png";
+import s from "./MainHeader.module.scss";
 
-export default function Header() {
+export default function MainHeader() {
   const { t } = useTranslation();
 
   return (

@@ -1,0 +1,27 @@
+.recipesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)),
+    url("./../../../assets/images/header/bg-header.jpg");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 40%;
+  background-attachment: scroll;
+  background-size: cover;
+  padding: 0 40px 35px 10px;
+}
+
+.headerLinks {
+  max-width: 400px;
+  display: flex;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+
+  & li {
+    margin-right: 32px;
+  }
+}

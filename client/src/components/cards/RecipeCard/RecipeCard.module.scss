@@ -1,0 +1,52 @@
+.recipeCard {
+  cursor: pointer;
+  margin-top: 10px;
+  max-width: 320px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  max-height: 240px;
+}
+
+.recipeCardImage {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-top: -1px;
+  margin-left: -1px;
+
+  & > img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+}
+
+.recipeCardDescription {
+  padding: 20px 15px 15px 15px;
+}
+
+.recipeCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipeCardTitle {
+  font-size: 1.25rem;
+}
+
+.recipeCardNoLike {
+  color: rgba(141, 153, 172, 0.6);
+  font-size: 1.3rem;
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(141, 153, 172, 0.6);
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.recipeCardIngredientsMinutes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #8d99ac;
+}
