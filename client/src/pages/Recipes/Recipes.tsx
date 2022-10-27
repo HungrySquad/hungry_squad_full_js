@@ -8,6 +8,8 @@ import Accordion from "../../components/accordion/Accordion";
 import icon from "./../../assets/images/filtersIcon/ingredients-icon.png";
 import RecipeCard from "../../components/cards/RecipeCard/RecipeCard";
 import s from "./Recipes.module.scss";
+import RecipeHeader from "../../components/recipes/RecipesHeader/RecipeHeader";
+import RecipeDetails from "../../components/recipes/RecipeDetails/RecipeDetails";
 
 export default function Recipes() {
   const { t } = useTranslation();
@@ -33,7 +35,7 @@ export default function Recipes() {
             </Tabs>
           </div>
         </div>
-        {/*  */}
+
         <section className={s.mainContent}>
           <div className={s.mainContentLeft}>
             <SearchInput />
@@ -79,7 +81,7 @@ export default function Recipes() {
             />
           </div>
 
-          <div className={s.mainContentRight}>
+          {/* <div className={s.mainContentRight}>
             <SearchInput withFilter />
 
             <div className={s.recipePanels}>
@@ -95,6 +97,27 @@ export default function Recipes() {
               <RecipeCard />
               <RecipeCard />
               <RecipeCard />
+            </div>
+          </div> */}
+
+          <div className={s.mainContentRight}>
+            {/* <SearchInput withFilter /> */}
+            <RecipeHeader recipeName="Recipe name" />
+
+            <div>
+              <RecipeDetails />
+
+              <div className={s.additionalRecipe}>
+                <p className={s.additionalRecipes}>You may also like</p>
+              </div>
+              <div className={s.recipePanels}>
+                <RecipeCard />
+                <RecipeCard />
+                <RecipeCard />
+                <RecipeCard />
+                <RecipeCard />
+                <RecipeCard />
+              </div>
             </div>
           </div>
         </section>

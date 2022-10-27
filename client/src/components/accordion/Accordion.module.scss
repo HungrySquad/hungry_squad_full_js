@@ -119,3 +119,11 @@
   z-index: 1000;
   border-radius: 2px;
 }
+
+.integredientOptions {
+  transition: opacity 1s ease-out;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}

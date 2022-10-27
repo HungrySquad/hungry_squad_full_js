@@ -1,0 +1,166 @@
+.recipeDetails {
+  width: 100%;
+}
+
+.recipeDetailsImage {
+  display: flex;
+  margin-top: 10px;
+  width: 100%;
+  color: #000000;
+
+  & img {
+    flex-grow: 1;
+    border: 1px solid #b8c2d1;
+    border-radius: 8px;
+    margin-top: -1px;
+    margin-left: -1px;
+  }
+}
+
+.recipeDetailsCookingTimeWrapper {
+  margin-top: 20px;
+  padding: 16px 90px;
+  border: 1px solid #b8c2d1;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  color: #000000;
+}
+
+.recipeDetailsCookingTime {
+  font-size: 1.13rem;
+
+  & > h6 {
+    font-size: 1.13rem;
+  }
+
+  & > span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.13rem;
+  }
+
+  & + & {
+    margin-top: 30px;
+  }
+}
+
+.recipeDetailsInformation {
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #b8c2d1;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.recipeDetailsNutritions {
+  margin-top: 20px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #b8c2d1;
+  color: #000000;
+}
+
+.recipeDetailsNutritionsName,
+.recipeDetailsNutritionsInfo {
+  color: #8d99ac;
+  font-size: 0.88rem;
+  font-weight: 300;
+}
+
+.recipeDetailsNutritionsSummary {
+  margin-top: 5px;
+  padding: 10px 80px;
+  background: linear-gradient(
+      270deg,
+      rgba(255, 248, 251, 0.5) 6.02%,
+      rgba(255, 247, 250, 0.5) 45.61%,
+      rgba(240, 237, 248, 0.5) 95.91%
+    ),
+    rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.recipeDetailsNutritionsDetailsRow {
+  font-size: 1.13rem;
+
+  & > h6 {
+    font-size: 1.13rem;
+  }
+
+  & > span {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.13rem;
+  }
+}
+// recipe directions
+.recipeDetailsDirections {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 170%;
+
+  color: #000000;
+}
+
+// nutrition information
+.recipeDetailsNutritionsTitle {
+  color: #8d99ac;
+  font-size: 0.88rem;
+  font-weight: 300;
+}
+
+.recipeDetailsNutritionsInformationsBg {
+  background: linear-gradient(
+      270deg,
+      rgba(255, 248, 251, 0.5) 6.02%,
+      rgba(255, 247, 250, 0.5) 45.61%,
+      rgba(240, 237, 248, 0.5) 95.91%
+    ),
+    rgba(255, 255, 255, 0.1);
+}
+
+.recipeDetailsNutritionsInformations {
+  color: #000000;
+  margin-top: 5px;
+  padding: 10px 80px;
+
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.recipeDetailsNutritionsInformationsHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin-bottom: 10px;
+  & > p {
+    font-size: 1.13rem;
+  }
+}
+
+.recipeDetailsNutritionsInformationRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.13rem;
+  cursor: pointer;
+
+  & + & {
+    margin-top: 20px;
+  }
+
+  &:hover {
+    background: rgba(146, 158, 175, 0.05);
+  }
+
+  & > div {
+    flex: 1 0;
+    border-bottom: 2px dotted #a7a7a7;
+    height: 1rem;
+  }
+}

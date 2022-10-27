@@ -15,7 +15,7 @@ export default function Tabs({ children }: IProps) {
   }, []);
 
   return (
-    <div>
+    <div className={s.tabs}>
       <ol className={s.tabList}>
         {children.map((child) => {
           const { title } = child.props;
