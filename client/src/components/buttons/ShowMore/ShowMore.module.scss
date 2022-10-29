@@ -1,0 +1,15 @@
+.showMore {
+  margin-top: 20px;
+  color: #616974;
+  border: 1px solid #b8c2d1;
+  border-radius: 50px;
+  width: 100%;
+  font-size: 1.13rem;
+  font-weight: 600;
+  padding: 20px 0;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 1);
+  }
+}

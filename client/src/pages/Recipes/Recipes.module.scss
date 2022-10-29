@@ -4,19 +4,6 @@
 
 .navigation {
   display: flex;
-  border-bottom: 1px solid #b8c2d1;
-}
-
-.creditsIcon {
-  font-size: 1.5rem;
-}
-
-.creditsIconRegular {
-  color: #b8c2d1;
-}
-
-.creditsIconClicked {
-  color: #585268;
 }
 
 .tabs {
@@ -42,7 +29,6 @@
   border-radius: 8px 8px 0px 0px;
   padding: 10px;
   overflow-y: scroll;
-  // height: calc(100vh - 250px);
 
   &::-webkit-scrollbar,
   &::-webkit-scrollbar {

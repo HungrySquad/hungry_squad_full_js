@@ -2,7 +2,7 @@ import noop from "lodash/noop";
 import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 
-import CommonButton from "../../components/buttons/CommonButton";
+import CommonButton from "../../components/buttons/CommonButton/CommonButton";
 import Footer from "../../components/footer/Footer";
 import MainHeader from "../../components/headers/MainHeader/MainHeader";
 import s from "./Main.module.scss";

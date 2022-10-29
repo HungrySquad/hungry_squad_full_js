@@ -8,7 +8,7 @@ import { IUser } from "../../../interfaces/user";
 import { AppDispatch } from "../../../store";
 import { registerUser } from "../../../store/actions/auth";
 
-import CommonButton from "../../buttons/CommonButton";
+import CommonButton from "../../buttons/CommonButton/CommonButton";
 import CommonInput from "../../fields/CommonInput/CommonInput";
 import AuthForm from "../../forms/AuthForm/AuthForm";
 import SelectGender from "../../selectGender/SelectGender";

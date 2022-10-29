@@ -1,0 +1,33 @@
+.recipePanels {
+  overflow-y: scroll;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(141, 153, 172, 0.34);
+  }
+}
+
+.recipes {
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(
+      200.17deg,
+      rgba(245, 245, 245, 0.5) -6.78%,
+      rgba(240, 237, 248, 0.5) 26.52%,
+      rgba(248, 235, 239, 0.5) 55.8%,
+      rgba(255, 248, 251, 0.5) 86.53%
+    ),
+    #ffffff;
+  max-width: 1250px;
+  border-radius: 8px;
+  padding: 20px 20px 15px;
+}

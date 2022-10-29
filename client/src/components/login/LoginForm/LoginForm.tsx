@@ -7,7 +7,7 @@ import CommonInput from "../../fields/CommonInput/CommonInput";
 import AuthForm from "../../forms/AuthForm/AuthForm";
 import HeadlineSmall from "../../texts/HeadlineSmall/HeadlineSmall";
 import HeadlineLarge from "../../texts/HeadlineLarge/HeadlineLarge";
-import CommonButton from "../../buttons/CommonButton";
+import CommonButton from "../../buttons/CommonButton/CommonButton";
 import ROUTES from "../../../constants/routes";
 import { loginUser } from "../../../store/actions/auth";
 import { AppDispatch } from "../../../store";
