@@ -8,10 +8,13 @@ import {
 
 export const getUserInfo = async (req: Request, res: Response) => {
   const userInfo = await findUserInfo((req as any).user.userId);
+
   if (!userInfo) {
     return res.status(400).json({ message: "User does not exist" });
   }
+
   const { _id, gender, email } = userInfo;
+
   return res.json({
     user: {
       _id,
@@ -23,18 +26,23 @@ export const getUserInfo = async (req: Request, res: Response) => {
 
 export const deleteUserInfo = async (req: Request, res: Response) => {
   const deletedUser = await deleteUser((req as any).user.userId);
+
   if (!deletedUser) {
     return res.status(400).json({ message: "User does not exist" });
   }
+
   return res.json({ message: "Profile deleted successfully" });
 };
 
 export const updateUserInfo = async (req: Request, res: Response) => {
   const oldUserInfo = await findUserInfo((req as any).user.userId);
+
   if (!oldUserInfo) {
     return res.status(400).json({ message: "User does not exist" });
   }
+
   const { oldPassword, newPassword } = req.body;
+
   if (await compare(oldPassword, oldUserInfo.password)) {
     const newUserInfo = await updateUserPassword(newPassword, oldUserInfo);
     if (!newUserInfo) {
@@ -42,5 +50,6 @@ export const updateUserInfo = async (req: Request, res: Response) => {
     }
     return res.json({ message: "Password changed successfully" });
   }
+
   return res.status(400).json({ message: "Wrong old password" });
 };

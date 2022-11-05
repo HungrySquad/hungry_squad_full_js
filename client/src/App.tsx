@@ -12,7 +12,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import GuestRoute from "./components/GuestRoute";
 import { AppDispatch } from "./store";
 import "./i18n/index";
-import { checkAuth } from "./store/slices/auth";
+import { checkAuth } from "./store/actions/auth";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();

@@ -16,16 +16,9 @@ export const authSlice = createSlice({
   name: "authSlice",
   initialState,
   reducers: {
-    checkAuth(state) {
-      const token = localStorage.getItem("token");
-
-      if (token) {
-        state.isLogged = true;
-        state.token = token;
-      } else {
-        state.isLogged = false;
-        state.token = "";
-      }
+    setAuth(state, action) {
+      state.isLogged = action.payload.isLogged;
+      state.token = action.payload.isLogged;
     },
   },
   extraReducers: (builder) => {
@@ -40,6 +33,6 @@ export const authSlice = createSlice({
   },
 });
 
-export const { checkAuth } = authSlice.actions;
+export const { setAuth } = authSlice.actions;
 
 export default authSlice.reducer;

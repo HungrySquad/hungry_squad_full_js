@@ -46,6 +46,26 @@ class UserAPI {
       return false;
     }
   }
+
+  public async checkMe(token: string) {
+    try {
+      const response = await fetch("http://localhost:5000/api/users/me", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+      });
+
+      if (!response.ok) {
+        return false;
+      }
+
+      return await response.json();
+    } catch (e) {
+      return false;
+    }
+  }
 }
 
 const userAPI = new UserAPI();
