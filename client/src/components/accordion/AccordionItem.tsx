@@ -12,7 +12,7 @@ export default function AccordionItem({ option }: IProps) {
         <span>{option.name}</span>
         <span className={s.ingredientCardDots} />
         <div className="ingredient-info d-flex justify-content-between">
-          <span className={s.ingredientAmount} role="textbox" contentEditable>
+          <span className={s.ingredientAmount} role="textbox">
             any amount
           </span>
           <input
