@@ -10,14 +10,17 @@ class UserAPI {
     password: IUser["password"]
   ): Promise<false | ILogin> {
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVER_URL}/api/auth/login`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        }
+      );
 
       return response.json();
     } catch (e) {
@@ -31,7 +34,7 @@ class UserAPI {
     gender: IUser["gender"]
   ) {
     try {
-      await fetch("http://localhost:5000/api/auth/register", {
+      await fetch(`${process.env.REACT_APP_SERVER_URL}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -49,13 +52,16 @@ class UserAPI {
 
   public async checkMe(token: string) {
     try {
-      const response = await fetch("http://localhost:5000/api/users/me", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer " + token,
-        },
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVER_URL}/api/users/me`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
 
       if (!response.ok) {
         return false;
