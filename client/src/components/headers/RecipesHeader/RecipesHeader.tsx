@@ -8,6 +8,7 @@ import s from "./RecipesHeader.module.scss";
 
 export default function RecipesHeader() {
   const { t } = useTranslation();
+
   return (
     <header className={s.recipesHeader}>
       <div className={s.headerLogo}>
@@ -18,7 +19,7 @@ export default function RecipesHeader() {
       <nav>
         <ul className={s.headerLinks}>
           <li>
-            <Link to={ROUTES.main}>{t("MY RECIPES")}</Link>
+            <Link to={ROUTES.recipes}>{t("MY RECIPES")}</Link>
           </li>
           <li>
             <Dropdown

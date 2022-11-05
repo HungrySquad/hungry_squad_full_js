@@ -38,8 +38,7 @@ function App() {
 
         <Route
           path={ROUTES.recipes}
-          // element={<PrivateRoute component={Recipes} />}
-          element={<Recipes />}
+          element={<PrivateRoute component={Recipes} />}
         />
       </Routes>
     </BrowserRouter>
