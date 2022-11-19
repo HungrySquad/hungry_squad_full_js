@@ -20,6 +20,10 @@ export const authSlice = createSlice({
       state.isLogged = action.payload.isLogged;
       state.token = action.payload.isLogged;
     },
+    logOut(state) {
+      state.isLogged = false;
+      state.token = "";
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(loginUser.fulfilled, (state, action) => {
@@ -33,6 +37,6 @@ export const authSlice = createSlice({
   },
 });
 
-export const { setAuth } = authSlice.actions;
+export const { setAuth, logOut } = authSlice.actions;
 
 export default authSlice.reducer;

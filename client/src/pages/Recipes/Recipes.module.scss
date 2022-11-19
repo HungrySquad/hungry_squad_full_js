@@ -1,16 +1,11 @@
 .wrapper {
-  padding: 30px;
-}
-
-.navigation {
-  display: flex;
+  width: 100vw;
 }
 
 .tabs {
+  padding: 30px;
   margin: 0 auto;
 }
-
-// main content
 
 .mainContent {
   display: flex;
@@ -45,6 +40,10 @@
 .mainContentRight {
   margin-left: 10px;
   flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1;
 }
 
 .recipePanels {
@@ -52,7 +51,6 @@
   flex-wrap: wrap;
   overflow-y: scroll;
   width: 100%;
-  justify-content: space-between;
   height: calc(100vh - 250px);
 
   &::-webkit-scrollbar,

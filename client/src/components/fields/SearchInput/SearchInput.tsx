@@ -6,12 +6,14 @@ interface IProps {
   withFilter?: boolean;
   value: string;
   onChange: ChangeEventHandler<HTMLInputElement>;
+  placeholder?: string;
 }
 
 export default function SearchInput({
   withFilter = false,
   value,
   onChange,
+  placeholder,
 }: IProps) {
   return (
     <label className={s.ingredientsInput} htmlFor="ingredients-input">
@@ -27,7 +29,7 @@ export default function SearchInput({
         name="ingredients-input"
         id="ingredients-input"
         className={s.inputIconText}
-        placeholder="Search ingredients..."
+        placeholder={placeholder}
         value={value}
         onChange={onChange}
       />

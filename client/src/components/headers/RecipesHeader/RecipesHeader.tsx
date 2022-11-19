@@ -23,11 +23,7 @@ export default function RecipesHeader() {
           </li>
           <li>
             <Dropdown
-              options={[
-                { name: t("Settings") },
-                { name: t("View History") },
-                { name: t("Logout") },
-              ]}
+              options={[{ name: t("Settings") }, { name: t("View History") }]}
             ></Dropdown>
           </li>
         </ul>

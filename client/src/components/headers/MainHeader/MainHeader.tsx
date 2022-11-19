@@ -43,7 +43,6 @@ export default function MainHeader() {
                   options={[
                     { name: t("Settings") },
                     { name: t("View History") },
-                    { name: t("Logout") },
                   ]}
                 ></Dropdown>
               </li>

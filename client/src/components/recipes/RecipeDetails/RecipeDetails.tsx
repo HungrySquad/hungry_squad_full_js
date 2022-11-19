@@ -1,31 +1,55 @@
-import Tabs from "../../tabs/Tabs";
-import recipeImage from "./../../../assets/images/recipeImages/selected-recipe-img.png";
-import s from "./RecipeDetails.module.scss";
+import { useEffect, useState } from "react";
 import classNames from "classnames";
+import Tabs from "../../tabs/Tabs";
+import { IRecipe } from "../../../interfaces/ingredients";
+import noImage from "./../../../assets/images/recipeImages/no-image.png";
+import s from "./RecipeDetails.module.scss";
+import { getTimeFromRecipeTimeValues } from "../../../utils/getTimeFromRecipeTimeValues";
 
-interface IRecipeDetailsProps {}
+interface IRecipeDetailsProps {
+  recipe: IRecipe;
+}
 
-export default function RecipeDetails() {
+export default function RecipeDetails({ recipe }: IRecipeDetailsProps) {
+  const [imgSrc, setImgSrc] = useState<string>();
+
+  useEffect(() => {
+    if (recipe?.img_url) {
+      const img = new Image();
+      img.src = recipe?.img_url;
+      img.onload = () => {
+        setImgSrc(recipe?.img_url);
+      };
+    }
+  }, [recipe?.img_url]);
+
   return (
     <div className={s.recipeDetails}>
       <div className={s.recipeDetailsImage}>
-        <img src={recipeImage} alt="selected-recipe" />
+        {imgSrc ? (
+          <img src={imgSrc} alt="recipe" />
+        ) : (
+          <div className={s.recipeNoImage}>
+            <img src={noImage} alt="" />
+            <p>No image</p>
+          </div>
+        )}
       </div>
       <div className={s.recipeDetailsCookingTimeWrapper}>
         <div className="time-and-amount__column d-flex flex-column">
           <div className={s.recipeDetailsCookingTime}>
             <h6>Prep time</h6>
-            <span>N mins</span>
+            <span>{getTimeFromRecipeTimeValues(recipe.time_values[0])}</span>
           </div>
           <div className={s.recipeDetailsCookingTime}>
             <h6>Cook time</h6>
-            <span>N mins</span>
+            <span>{getTimeFromRecipeTimeValues(recipe.time_values[1])}</span>
           </div>
         </div>
         <div className="time-and-amount__column d-flex flex-column">
           <div className={s.recipeDetailsCookingTime}>
             <h6>Total time</h6>
-            <span>N mins</span>
+            <span>{getTimeFromRecipeTimeValues(recipe.time_values[2])}</span>
           </div>
           <div className={s.recipeDetailsCookingTime}>
             <h6>Additional time</h6>
@@ -35,7 +59,7 @@ export default function RecipeDetails() {
         <div className="time-and-amount__column d-flex flex-column">
           <div className={s.recipeDetailsCookingTime}>
             <h6>Serving</h6>
-            <span>N</span>
+            <span>{recipe.servings}</span>
           </div>
           <div className={s.recipeDetailsCookingTime}>
             <h6>Yield</h6>
@@ -49,88 +73,29 @@ export default function RecipeDetails() {
           <div title="Ingredients">
             <div className={s.recipeDetailsNutritionsInformations}>
               <div className={s.recipeDetailsNutritionsInformationsHeader}>
-                <p className="nutritions-full__title">Nutrient</p>
-                <p className="nutritions-full__title">Mass, Daily Value % *</p>
+                {/* <p className="nutritions-full__title">Nutrient</p>
+                <p className="nutritions-full__title">Mass, Daily Value % *</p> */}
               </div>
               <div>
-                <div className={s.recipeDetailsNutritionsInformationRow}>
+                {recipe.ingredients.map((ingredient) => (
+                  <div
+                    className={s.recipeDetailsNutritionsInformationRow}
+                    key={ingredient}
+                  >
+                    <span>{ingredient}</span>
+                    <div />
+                  </div>
+                ))}
+                {/* <div className={s.recipeDetailsNutritionsInformationRow}>
                   <span>Total Fat</span>
                   <div />
                   <span>Ng, N%</span>
-                </div>
-                <div className={s.recipeDetailsNutritionsInformationRow}>
-                  <span>Saturated Fat</span>
-                  <div />
-                  <span>Ng, N%</span>
-                </div>
-                <div className={s.recipeDetailsNutritionsInformationRow}>
-                  <span>Cholesterol</span>
-                  <div />
-                  <span>Nmg, N%</span>
-                </div>
-                <div className={s.recipeDetailsNutritionsInformationRow}>
-                  <span>Sodium</span>
-                  <div />
-                  <span>Nmg, N%</span>
-                </div>
-                <div className={s.recipeDetailsNutritionsInformationRow}>
-                  <span>Total Carbohydrate</span>
-                  <div />
-                  <span>Ng, N%</span>
-                </div>
-                <div className={s.recipeDetailsNutritionsInformationRow}>
-                  <span>Total Sugars</span>
-                  <div />
-                  <span>Ng, N%</span>
-                </div>
-                <div className={s.recipeDetailsNutritionsInformationRow}>
-                  <span>Protein</span>
-                  <div />
-                  <span>Ng, N%</span>
-                </div>
-                <div className={s.recipeDetailsNutritionsInformationRow}>
-                  <span>Vitamin C</span>
-                  <div />
-                  <span>Nmg, N%</span>
-                </div>
-                <div className={s.recipeDetailsNutritionsInformationRow}>
-                  <span>Calcium</span>
-                  <div />
-                  <span>Nmg, N%</span>
-                </div>
-                <div className={s.recipeDetailsNutritionsInformationRow}>
-                  <span>Iron</span>
-                  <div />
-                  <span>Nmg, N%</span>
-                </div>
-                <div className={s.recipeDetailsNutritionsInformationRow}>
-                  <span>Potassium</span>
-                  <div />
-                  <span>Nmg, N%</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
           <div title="Directions">
-            <p className={s.recipeDetailsDirections}>
-              Cheese lorem ipsum monterey jack roquefort cheese strings.
-              Halloumi taleggio who moved my cheese melted cheese gouda hard
-              cheese ricotta melted cheese. Paneer port-salut stinking bishop
-              brie cheese on toast lancashire hard cheese fromage. Taleggio
-              fromage frais jarlsberg cut the cheese who moved my cheese. Swiss
-              edam smelly cheese. Paneer smelly cheese cream cheese jarlsberg
-              ricotta cheese slices st. agur blue cheese croque monsieur.
-              Bavarian bergkase caerphilly everyone loves pepper jack fromage
-              frais cheesecake everyone loves when the cheese comes out
-              everybody's happy. Cottage cheese who moved my cheese taleggio.
-              Bavarian bergkase danish fontina manchego squirty cheese smelly
-              cheese cream cheese halloumi cow. Cauliflower cheese brie edam
-              cheese strings brie queso red leicester goat. Mozzarella emmental
-              cream cheese. Cheese and biscuits fondue dolcelatte roquefort
-              parmesan melted cheese mascarpone cheesecake. Pepper jack macaroni
-              cheese pepper jack queso stinking bishop red leicester mozzarella
-              ricotta. Fromage frais pepper jack bishop.
-            </p>
+            <p className={s.recipeDetailsDirections}>{recipe.instructions}</p>
           </div>
           <div title="Nutritions">
             <div className={s.recipeDetailsNutritions}>
@@ -171,61 +136,24 @@ export default function RecipeDetails() {
                   </p>
                 </div>
                 <div>
-                  <div className={s.recipeDetailsNutritionsInformationRow}>
-                    <span>Total Fat</span>
-                    <div />
-                    <span>Ng, N%</span>
-                  </div>
-                  <div className={s.recipeDetailsNutritionsInformationRow}>
-                    <span>Saturated Fat</span>
-                    <div />
-                    <span>Ng, N%</span>
-                  </div>
-                  <div className={s.recipeDetailsNutritionsInformationRow}>
-                    <span>Cholesterol</span>
-                    <div />
-                    <span>Nmg, N%</span>
-                  </div>
-                  <div className={s.recipeDetailsNutritionsInformationRow}>
-                    <span>Sodium</span>
-                    <div />
-                    <span>Nmg, N%</span>
-                  </div>
-                  <div className={s.recipeDetailsNutritionsInformationRow}>
-                    <span>Total Carbohydrate</span>
-                    <div />
-                    <span>Ng, N%</span>
-                  </div>
-                  <div className={s.recipeDetailsNutritionsInformationRow}>
-                    <span>Total Sugars</span>
-                    <div />
-                    <span>Ng, N%</span>
-                  </div>
-                  <div className={s.recipeDetailsNutritionsInformationRow}>
-                    <span>Protein</span>
-                    <div />
-                    <span>Ng, N%</span>
-                  </div>
-                  <div className={s.recipeDetailsNutritionsInformationRow}>
-                    <span>Vitamin C</span>
-                    <div />
-                    <span>Nmg, N%</span>
-                  </div>
-                  <div className={s.recipeDetailsNutritionsInformationRow}>
-                    <span>Calcium</span>
-                    <div />
-                    <span>Nmg, N%</span>
-                  </div>
-                  <div className={s.recipeDetailsNutritionsInformationRow}>
-                    <span>Iron</span>
-                    <div />
-                    <span>Nmg, N%</span>
-                  </div>
-                  <div className={s.recipeDetailsNutritionsInformationRow}>
-                    <span>Potassium</span>
-                    <div />
-                    <span>Nmg, N%</span>
-                  </div>
+                  {recipe.nutritions.map((nutrition) => {
+                    return nutrition ? (
+                      <div
+                        className={s.recipeDetailsNutritionsInformationRow}
+                        key={nutrition}
+                      >
+                        <span>{nutrition}</span>
+                        <div />
+                      </div>
+                    ) : (
+                      <></>
+                    );
+                  })}
+                  {/* <div className={s.recipeDetailsNutritionsInformationRow}>
+                          <span>Total Fat</span>
+                          <div />
+                          <span>Ng, N%</span>
+                      </div> */}
                 </div>
               </div>
               <h5 className={s.recipeDetailsNutritionsInfo}>

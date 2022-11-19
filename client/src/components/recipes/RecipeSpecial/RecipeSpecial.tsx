@@ -28,7 +28,6 @@ export default function RecipeSpecial() {
             <div className={s.trendingRecipes}>
               <RecipeCard />
               <RecipeCard />
-
               <RecipeCard />
             </div>
           </div>

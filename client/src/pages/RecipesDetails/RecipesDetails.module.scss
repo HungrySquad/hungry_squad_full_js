@@ -1,0 +1,81 @@
+.wrapper {
+  width: 100vw;
+}
+
+.tabs {
+  padding: 30px;
+  margin: 0 auto;
+}
+
+.mainContent {
+  display: flex;
+  margin-top: 20px;
+}
+
+.mainContentLeft {
+  flex-basis: 20%;
+  background: linear-gradient(
+      270deg,
+      rgba(255, 248, 251, 0.5) 6.02%,
+      rgba(255, 247, 250, 0.5) 45.61%,
+      rgba(240, 237, 248, 0.5) 95.91%
+    ),
+    #f0edf8;
+  border-radius: 8px 8px 0px 0px;
+  padding: 10px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(141, 153, 172, 0.34);
+  }
+}
+
+.mainContentRight {
+  margin-left: 10px;
+  flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.recipePanels {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  width: 100%;
+  height: calc(100vh - 250px);
+
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb,
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: rgba(141, 153, 172, 0.34);
+  }
+}
+
+.additionalRecipes {
+  font-family: "Roboto";
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 150%;
+  color: #000000;
+}
+
+.additionalRecipe {
+  display: flex;
+  justify-content: center;
+}

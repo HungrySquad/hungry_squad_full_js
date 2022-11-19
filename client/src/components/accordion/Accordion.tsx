@@ -8,9 +8,10 @@ interface IProps {
   icon: string;
   header: string;
   options: IIngredientOption[];
+  onChange?: (optionName: string, enabled: boolean) => void;
 }
 
-export default function Accordion({ icon, header, options }: IProps) {
+export default function Accordion({ icon, header, options, onChange }: IProps) {
   const [isOpen, setIsOpen] = useState<boolean>(true);
 
   const handleClick = () => {
@@ -42,7 +43,11 @@ export default function Accordion({ icon, header, options }: IProps) {
       </div>
       {isOpen &&
         options.map((option) => (
-          <AccordionItem key={option.name} option={option} />
+          <AccordionItem
+            key={option.name}
+            option={option}
+            onChange={onChange}
+          />
         ))}
     </div>
   );

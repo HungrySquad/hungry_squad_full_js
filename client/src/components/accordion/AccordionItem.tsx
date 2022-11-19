@@ -3,9 +3,14 @@ import s from "./Accordion.module.scss";
 
 interface IProps {
   option: IIngredientOption;
+  onChange?: (optionName: string, enabled: boolean) => void;
 }
 
-export default function AccordionItem({ option }: IProps) {
+export default function AccordionItem({ option, onChange }: IProps) {
+  const handleEnableOption = () => {
+    onChange?.(option.name, !option.enabled);
+  };
+
   return (
     <div className={s.ingredientCardContent}>
       <div className={s.ingredientCardIngredient}>
@@ -19,7 +24,8 @@ export default function AccordionItem({ option }: IProps) {
             className={s.ingredientSelection}
             type="checkbox"
             name="your-ingredients"
-            disabled={!option.enabled}
+            disabled={option.enabled}
+            onChange={handleEnableOption}
           />
         </div>
       </div>

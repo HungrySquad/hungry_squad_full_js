@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import ROUTES from "../../constants/routes";
+import { AppDispatch } from "../../store";
+import { logOut } from "../../store/slices/auth";
 import s from "./Dropdown.module.scss";
 
 interface IProps {
@@ -10,10 +13,17 @@ interface IProps {
 
 export default function Dropdown({ options }: IProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const toggle = () => {
     setIsOpen((prev) => !prev);
+  };
+
+  const logout = () => {
+    dispatch(logOut());
+    navigate(ROUTES.login);
   };
 
   return (
@@ -40,6 +50,9 @@ export default function Dropdown({ options }: IProps) {
               {option.name}
             </Link>
           ))}
+          <span className={s.dropdownChildItem} onClick={logout}>
+            Logout
+          </span>
         </div>
       )}
     </div>
