@@ -4,7 +4,7 @@ class RecipesAPI {
   public async getRecipes(): Promise<null | IRecipesPaginatedResponse> {
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_RECIPES_URL}/recipies/?page=1&size=50`,
+        `${process.env.REACT_APP_RECIPES_URL}/recipies/?page=1&size=51`,
         {
           method: "GET",
         }

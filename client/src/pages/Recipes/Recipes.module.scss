@@ -1,5 +1,5 @@
 .wrapper {
-  width: 100vw;
+  width: 98vw;
 }
 
 .tabs {
@@ -40,18 +40,12 @@
 .mainContentRight {
   margin-left: 10px;
   flex-basis: 80%;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  flex-grow: 1;
 }
 
 .recipePanels {
   display: flex;
   flex-wrap: wrap;
-  overflow-y: scroll;
   width: 100%;
-  height: calc(100vh - 250px);
 
   &::-webkit-scrollbar,
   &::-webkit-scrollbar {

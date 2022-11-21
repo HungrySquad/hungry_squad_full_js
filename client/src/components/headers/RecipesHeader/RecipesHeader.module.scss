@@ -9,7 +9,7 @@
   background-position-y: 40%;
   background-attachment: scroll;
   background-size: cover;
-  padding: 0 40px 35px 10px;
+  padding: 30px 30px;
 }
 
 .headerLinks {
@@ -21,7 +21,7 @@
   font-size: 18px;
   line-height: 150%;
 
-  & li {
-    margin-right: 32px;
+  li + li {
+    margin-left: 20px;
   }
 }

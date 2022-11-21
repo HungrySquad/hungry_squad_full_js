@@ -52,10 +52,10 @@ export default function RecipeCard({ recipe }: IRecipeCardProps) {
             </div>
             <div className={s.recipeCardIngredientsMinutes}>
               <p>
-                <span>0/0</span> ingredients
+                <span>0/{recipe.ingredients.length}</span> ingredients
               </p>
               <p>
-                <span>00</span> minutes
+                <span>{recipe.servings}</span> minutes
               </p>
             </div>
           </div>
